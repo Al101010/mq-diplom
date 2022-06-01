@@ -1,5 +1,3 @@
-/*подключение шрифтов */
-
 @font-face {
   font-family: "Open Regular";
   src: url("../fonts/OpenSans-Regular.woff");
@@ -21,14 +19,215 @@
   padding:0;
 }
 
-.page {
-  widht: 1660px;
+/*_________________________________________POPUP*//**/
+._hidden {
+  display: none;/*flex;*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+    z-index: 98;
 }
 
-/* --------------Heder - банер ----border: 1px solid red;------------ */
+.popup {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 30px;
+  width: 340px;
+  z-index: 100;
+}
+
+.darkening {
+  display: flex;
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: 99;
+}
+
+.popup-title {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.popup-title::after {
+  content:"";
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 66px;
+  height: 3px;
+  background:#b59f5b;
+}
+
+.popup-p {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+    /* ПОЛЕ: select - как часто вы заходите */
+
+.form-group {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.select {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 5px;
+  width: 100%;
+  height: 46px;
+  border: 1px solid #ffffff;
+  padding: 0 25px 0 10px;
+  background-color:#f4f7f6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../svg/form-arrows.svg");
+  background-size: 10px 20px;
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+}
+
+/*.select:focus {
+  border: 2px solid #b59f5b;
+}*/
+
+.select:hover {
+  border: 2px solid #b59f5b;
+}
+
+.radio-label {
+  margin-top: 8px;
+  /*width: 10px;*/
+}
+
+.mailing-list-text:nth-child(n+2) {
+  margin-right: 15px;
+  /*margin-left: 5px;*/
+}
+
+.mailing-list-text::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../svg/form-empty-circle.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.radio:checked ~ .mailing-list-text::before {
+  background-image: url("../svg/form-circle.svg");
+}
+
+.radio {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+}
+
+.text-field {
+  margin-top: 25px;
+}
+
+.text-field_label {}
+
+.text-field_input {
+  margin-top: 5px;
+  padding: 10px;
+  height: 120px;
+  width: 100%;
+  border: 1px solid #ffffff;
+  background-color: #f4f7f6;
+}
+
+.text-field_input:focus {
+  border: 2px solid #b59f5b;  
+}
+
+.text-field_input:hover {
+  border: 2px solid #b59f5b;  
+}
+
+textarea {
+  resize: none;
+}
+
+/* Кнопка: ОТПРАВИТЬ */
+
+.to_send-row {
+  display: flex;
+  margin-top: 20px;
+}
+
+.to_send-button {
+  background-color: #b59f5b;
+  border: 2px solid currentColor;
+  cursor: pointer;
+  padding: 10px 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.to_send-button:hover {
+  background-color: #000000;
+}
+
+/* Кнопка: Закрыть окно POPUP */
+    
+.popup__close {
+    width: 1.4em;
+    height: 1em;
+    font-size: 20px;
+    position: absolute;
+    top: -1.5em;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.popup__close:before, .popup__close:after {
+    width: 1.4em;
+    height: 0.2em;
+    content: "";
+    background-color: #ffffff;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.popup__close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popup__close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+/*_________________________________________Heder - банер*/
 .header {
   font-family: "Open Regular", sans-serif;
-  background-image: url("../images/banner-bg.jpg");
   background-repeat: no-repeat;
   background-position: right top;
   background-size: cover;
@@ -36,8 +235,7 @@
   color: #ffffff;
   position: relative;
   box-sizing: border-box;
-  padding: 25px 145px 125px 245px;
-  margin-bottom: 0px;
+  padding: 0 10vw 0 10vw;/*25px 145px 125px 245px;*/
   z-index:0;
 }
 
@@ -53,61 +251,56 @@
   z-index:-1;
 }
 
-.logo {
-  display: flex;
-  align-items: flex-start;
-  padding: 0 0 0 0;
-  margin: 0 0 0 0px;
-  /*margin-right: 171px;*/
-  justify-content: flex-start;
-  width: 180px;
-}
-.menu {
-  display: flex;
-  align-items: flex-start;
-  padding: 0 0;
-  margin: 0 0 0 0;
-  justify-content: space-between;
-}
-.menu-list {
-  display: flex;
-  justify-content: flex-end;  
-  margin: 12px 75px 0 0;
-  list-style: none;
-}
-.menu-list-item {
-  padding: 0 18px 0 17px;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-A.menu_a {
-  color: #ffffff;
-  text-decoration: none;
-     /*Цвет ссылок*/
-}
-A.menu_a:visited {
-  color: #ffffff;
-  /* Цвет посещенных ссылок */
-}
-A.menu_a:active {
-  color: #ffffff;
-  /* Цвет активных ссылок */
-}
-A.menu_a:hover {
-  text-decoration: underline;
-  /* Подчёркиваем ссылу при наведении */
-}
-.header-title {
+  .header-title {
   font-family: "Open Bold", sans-serif;
-  font-size: 45px;
+  font-size: 1.5rem;
   line-height: 1.7;
   text-transform: uppercase;
-  margin: 103px 0 0 75px;
+  margin: 45px 0 0 0;
   text-align: center;
+  width: 100%;
 }
 
-/* ==========сейчас в треде==== */
+/*____________________________________Меню гамбургер*/
+.hamb{
+  display: flex;
+  position: absolute;  
+  right: 0;
+  z-index: 1;
+}
+ 
+.hamb-line {
+  background: #ffffff;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+  z-index: 1;
+} 
+ 
+.hamb-line::before,
+.hamb-line::after{
+  background: #ffffff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+z-index: 1;
+}
 
+.hamb-line::before{
+  top: 5px;
+  z-index: 1;
+}
+
+.hamb-line::after{
+  top: -5px;
+  z-index: 1;
+}
+
+/*_______________________________________сейчас в треде*/
 .trends-title {
   display: flex;
   font-family: "Open Bold", sans-serif;
@@ -115,7 +308,7 @@ A.menu_a:hover {
   width: 100%;
   text-align: center;
   margin-top: 57px;
-  margin-bottom: 25px;  
+  margin-bottom: 25px;
 }
 
 .top {
@@ -141,8 +334,11 @@ A.menu_a:hover {
 
 .trends {
   display: flex;
-  font-family: "Open Bold", sans-serif;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 57px;
   width: 100%;
+  font-family: "Open Bold", sans-serif;
   background-size: cover;
 }
 
@@ -151,11 +347,10 @@ A.menu_a:hover {
   align-items: flex-end;
   position: relative;
   box-sizing: border-box;
-  width: 25%;
-  height: 323px;
   border: 2px solid #ffffff;
   background-size: cover;
   padding: 15px 22px 15px 22px;
+  height: 323px;
 }
 
 .trend-container::after {
@@ -171,13 +366,16 @@ A.menu_a:hover {
 
 .trend1 {
   background-image: url("../images/trend1.jpg");
-}/* */
+}
+
 .trend2 {
   background-image: url("../images/trend2.jpg");
 }
+
 .trend3 {
   background-image: url("../images/trend3.jpg");
 }
+
 .trend4 {
   background-image: url("../images/trend4.jpg");
 }
@@ -217,6 +415,10 @@ a.trend-menu-link:hover {
   text-decoration: underline;
 }
 
+h1 {
+  margin: 0 auto;
+}
+
 .trend-title {
   color: #ffffff;
   font-size: 18px;
@@ -224,28 +426,14 @@ a.trend-menu-link:hover {
   margin-top: 5px;
 }
 
-/*=====body=====*/
-div.box {
-  display: flex;
-  position: relative;
-  margin-top: 57px;
-}
-
-.box-wrapper {
-  /*width: 1200px;*/
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-/*=====body=====*/
+/*________________________________________________________ main*/
 
 .main {
-  display: block;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
-  width: 800px;
 }
+
 .news {
   display: flex;
 }
@@ -254,20 +442,30 @@ div.box {
   margin-top: 53px;
   margin-bottom: 25px;
 }
+
 .news-text {
   display: block;
-  margin: 0 0 0 10px;
+  margin-left: 30px;
 }
+
 .news-img {
-  width: 380px;
-  margin: 2px 20px 0 0;
+  min-width: 380px;
+  min-height: 100px;
 }
+
+.news-img-a {
+  margin: 0 0 0 0;
+}
+
 .news-travel {
+  display: flex;
   list-style-type: none;
   display: flex;
   padding: 0px 5px 0 3px;
   font-weight: 700;
+  flex-wrap: wrap;
 }
+
 .news-name {
   display: flex;
   position: relative;
@@ -278,22 +476,27 @@ div.box {
   margin-top: 7px;
   padding: 0 30px 0 0;
 }
+
 a.news-link {
   color: #000000;
   text-decoration: none;
   /* Цвет ссылок */
 }
+
 a.news-link:visited {
   color: #000000;
   /* Цвет посещенных ссылок */
-   }
+}
+
 a.news-link:active {
   color: #000000;
   /* Цвет активных ссылок */
 }
+
 a.news-link:hover {
   color: #b59f5b;
 }
+
 .news-text-meta {
   font-family: "Open Bold", sans-serif;
   margin-top: 27px;
@@ -305,22 +508,27 @@ a.news-link:hover {
   font-size: 12px;
   margin-rigth: 10px;
 }
+
 .author {
   font-size: 12px;
   padding: 0 0 0 10px;
 }
+
 .about {
   margin-top:45px;
   font-family: "Open Regular", sans-serif;
 }
+
 .about > p {
   font-size: 15px;
   line-height:1.5;
   margin: 0 0 7px 0;
 }
+
 .news-li {
   margin-right:20px;
 }
+
 .news-lin {
   text-decoration: none;
   font-family: "Open Bold", sans-serif;
@@ -328,65 +536,81 @@ a.news-link:hover {
   color: #b59f5b;
   font-size: 14px;
 }
+
 .news-lin:hover {
   text-decoration: underline;
   /* Подчёркиваем ссылу при наведении */
 }
+
 a.author {
   color: #000000;
   text-decoration: none;
   /* Цвет ссылок */
 }
+
 a.author:visited {
   color: #000000;
   /* Цвет посещенных ссылок */
-   }
+}
+
 a.author:active {
   color: #000000;
   /* Цвет активных ссылок */
 }
+
 a.author:hover {
   text-decoration: underline;
   /* Подчёркиваем ссылу при наведении */
 }
 
-/*=====aside=====*/
+/*______________________________________________aside*/
 .aside {
-  width: 270px;
-  margin-left: 100px;
-  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
 }
+
 .aside-item:not(:first-child) {
   margin-top: 57px;
 }
+
 .new {
   display: flex;
   margin: 0 0 12px 0;
 }
+
 h3.top {
   font-size: 14px;
   margin: 0 0 21px 0;
 }
+
 .new-img {
   padding-top: 3px;
+  max-width: 70px;
+  min-width: 70px;
 }
+
 .new-text {
   text-decoration: none;
   color:#000000;
   margin-left:18px;
 }
+
 .date {
   font-family: "Open Sans";
 }
+
 .new-text {
   padding-top: 2px;  
 }
+
 .new-text .date {
   font-size: 12px;
   text-decoration: none;
   color:#000000;
   opacity: 0.54;
 }
+
 .new-name {
   display: flex;
   position: relative;
@@ -397,31 +621,39 @@ h3.top {
   margin-top: 2px;
 }
 
-/*==search==*/
+/*____________________________________________________search*/
 .search {
   margin-top: 58px;
   margin-bottom: 50px;
   display:flex;
   width:100%;
 }
+
  .hidden {
   width: 1px;
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
 }
+
+.search-group {
+  width: 100%;
+}
+
 .search-field {  
   box-sizing: border-box;
   padding-left: 18px;
-  width: 222px;
+  width: 100%; /*222px;*/
   height: 47px;
   font-size: 13px;
   border: none;
   background-color:#f4f7f6;
 }
+
 .search-field:hover {
   border: 3px #b59f5b solid;
 }
+
  .search-button {
   border: none;
   width: 47px;
@@ -432,11 +664,12 @@ h3.top {
   background-color: #b59f5b;
   cursor: pointer;
 }
+
  .search-button:hover {
    background-color: #000000;
 }
 
-/*==mailing==*/
+/*___________________________________________________mailing*/
 .topp {
   display: block;
   text-align: center;
@@ -444,6 +677,7 @@ h3.top {
   text-transform: uppercase;
   font-size: 14px;
 }
+
 .topp::after {
   content:"";
   display: block;
@@ -455,6 +689,7 @@ h3.top {
   height: 3px;
   background:#b59f5b;
 }
+
 .mailing-button {
   font-family: "Open Bold", sans-serif;
   font-weight: 800;
@@ -468,9 +703,11 @@ h3.top {
   font-size: 13px;
   cursor: pointer;
 }
+
 .mailing-button:hover {
   background-color: #000000;
 }
+
 .mailing-field {  
   box-sizing: border-box;
   padding-left: 18px;
@@ -481,20 +718,23 @@ h3.top {
   background-color:#f4f7f6;
   margin-top: 22px;
 }
+
 .mailing-field:hover {
   border: 3px #b59f5b solid;
 }
 
-/*==tegs==*/
+/*______________________________________________tegs*/
 .tegs-top {
   display: block;
   margin-bottom: 20px;
 }
+
 .list-tegs{
   list-style: none;
   display:flex;
   flex-wrap: wrap;
 }
+
 .list-tegs-link {
   height: 29px;
   align-items: center;
@@ -508,19 +748,24 @@ h3.top {
   padding: 3px 11px;
   font-weight: 700;
 }
+
 .list-tegs-link:hover {
   border: 3px solid #b59f5b;
 }
+
 .list-tegs-item {
   margin: 10px 3px 6px 3px;
 }
-/*==theme==*/
+
+/*____________________________________________theme*/
 .theme-top {
   display: block;
 }
+
 .list-theme {
   list-style: none;
 }
+
 .list-theme-link {
   align-items: center;
   align-content: space-between;
@@ -531,17 +776,21 @@ h3.top {
   padding-left: 5px;
   font-weight: 700;
 }
+
 .list-theme-link:hover {
     color:#b59f5b;
 }
+
 .list-theme-item {
   margin-top: 14px;
   margin-left: 3px;
 }
+
 li.list-theme-item {
   margin-top: 15px;
   line-height: 2;
 }
+
 .list-theme-count {
   display: inline-block;
   vertical-align: top;
@@ -551,7 +800,11 @@ li.list-theme-item {
   font-weight: 700;
 }
 
-/*==========наши_изделия========*/
+/*_________________________________________________________________наши_изделия (Новый)*/
+.box_goods {
+
+}
+
 .goods-title {
   width: 100%;
   text-align: center;
@@ -560,55 +813,58 @@ li.list-theme-item {
 }
 
 .our-goods {
-  width: 1200px;
-  margin: auto;
-}
+  width: 80vw;/*Desktop_1200px;   border: 1px solid red;*/
+  margin-right: auto;
+  margin-left: auto;  
+}/**/
 
 .goods {
-  display: flex;
-  width: 100%;
+  display: flex;/*распологаем в ряд*/ /*width: 100%;*/
   justify-content: space-between;
-}
+}/**/
 
 .goods-container {
   width: 30%;
+}/**/
+
+.goods-1 {
+  background-image: url("../images/shop-item-desk1.jpg");
+}
+.goods-2 {
+  background-image: url("../images/shop-item-desk2.jpg");
+}
+.goods-3 {
+  background-image: url("../images/shop-item-desk3.jpg");
 }
 
-.goods-border {
-  border: 3px solid #b59f5b;
-  height: 265px;
-  padding: 0 20px 20px 20px;
+.goods-block {
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: calc(100% - 50px);
+  /*margin: 0 0 0 0;*/
+  height: 100%;
+  flex-direction: column;
+  justify-content: start;    
 }
 
 .goods-border-jpg {
   font-size: 10px;
-  margin: 155px 0 0 0;
+  margin: 47% 0 0 0;
 }
 
-.goods1 {
-  background-image: url("../images/shop-item-desk1.jpg");
-  background-repeat: no-repeat;
-  background-position: center top;
+.goods-border {
+  border: 3px solid #b59f5b;
+  height: 100%;
+  font-family: "Open Bold", sans-serif;
+  padding: 0 20px 20px 20px;
+  align-content: end;
+  justify-content: end;
 }
-
-.goods2 {
-  background-image: url("../images/shop-item-desk2.jpg");
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
-.goods3 {
-  background-image: url("../images/shop-item-desk3.jpg");
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
 
 .goods-border-title {
   width: 100%;
-  /*text-align: center;*/
-  margin-top: 55px;
-  /*margin-bottom: 30px;*/
+  margin-top: 40px;
 }
 
 .goods-link {
@@ -619,7 +875,6 @@ li.list-theme-item {
 .goods-link:hover {
   text-decoration: underline;
 }
-
 
 .goods-price {
   display: flex;
@@ -640,18 +895,13 @@ li.list-theme-item {
   width: 0.4em;
 }
 
-
 .goods-button {
   border: none;
   width: 140px;
-  height: 44px;
+  height: 45px;
   text-transform: uppercase;
   font-family: "Open Bold", sans-serif;
   color: #ffffff;
-  /*background-image: url("../svg/search.svg");
-  background-repeat: no-repeat;
-  border: 1px solid red;
-  */
   background-size: 16px;
   background-position: center;
   background-color: #b59f5b;
@@ -661,55 +911,31 @@ li.list-theme-item {
 .goods-button:hover {
   background-color: #000000;
 }
-/*
-
-align-items: flex-end;
-
- 
-                           
-div.box {
-  display: flex;
-  margin: auto;
-  position: relative;
-  margin-top: 60px;
-}
-
-.box-wrapper {
-  width: 1200px;
-  margin: auto;
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
-}
 
 
----- Проба-----
-.proba {
-text-align: center;
-}                            */
-
-/*==footer==*/
-.footer {
-  margin-top: 30px;
-}
+/*_____________________________________________footer*/
 .container {
   padding: 0 15px;
-  width: 1200px;
+  width: 100%;/*1200px;*/
   margin: 0 auto; 
 }
+
 .footer_address {
   padding: 30px 0;
   background-color: #f4f7f6;
 }
+
 .footer_social {
   display: flex;
   justify-content: center;
   background-color: #f4f7f6;
   list-style: none;
 }
+
 .footer_social_item {
   margin-right: 25px;
 }
+
 .footer_social_link {
   width: 24px;
   height: 24px;
@@ -718,7 +944,7 @@ text-align: center;
   background-repeat: no-repeat;
   background-size: 20px;
 }
-/*   background-image: url("../images/shop-item-desk2.jpg"); */
+
 .tw {
   background-image: url("../svg/004-twitter.svg");
 }
@@ -740,7 +966,7 @@ text-align: center;
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
 }
-/*.about > p   padding: 7px 0px 0px 80px;*/
+
 .footer_copirate {
   margin-top: 70px;
   font-weight: 700;
@@ -748,4 +974,358 @@ text-align: center;
   text-align: center;
   color: #999999;
   text-decoration: none;
+}
+
+/*=================================================================================mobel 640 и менее*/
+
+@media (max-width: 640px) {
+
+  .header {
+    background-image: url("../images/banner-mobile.jpg");
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .hamb{
+    padding: 30px 15px 0 0;
+  }
+
+  .header-title {
+    font-family: "Open Bold", sans-serif;
+    font-size: 0.8rem;
+  }
+
+  .menu-header-list {
+      display: none;
+  }
+
+  .header-container {
+    display: flex;
+    height: 100%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .logo {
+    display: flex;
+    max-width: 77%; /*200px;*/
+    margin: 0 auto 0 auto;
+    justify-content: center;
+  }
+
+  /*______________________сейчас в треде*/
+    .trend-container {
+    width: 100%;
+    height: 280px;
+  }
+
+  /*_______________________________________________________________body*/
+  .main {
+    width: 100%;
+  }
+
+  .aside {
+    width: 100%;
+  }
+  /*_____________________*/
+  .news-img {
+    display: flex;
+    width: 100%;
+  }
+
+  .news {
+    flex-direction: column;
+  }
+
+  /*______________________________наши_изделия*/
+  .goods {
+    flex-direction: column;
+  }
+  .goods-container {
+  width: 100%;
+  margin-top: 20px;
+  }
+
+  /*____________________footer*/
+  .footer {
+    margin-top: 45px;
+  }
+
+  .footer_copirate {
+    margin-top: 40px;
+  }
+}
+
+/*==============================================================================tablet от 641 до 1200*/
+
+@media (min-width: 641px) and (max-width: 1199px) {
+  
+  .header {
+    background-image: url("../images/banner-bg-tablet.jpg");
+    height: 350px;
+  }
+
+  /*_______________________Меню гамбургер*/
+
+  .hamb{
+    padding: 50px 40px 0 0;
+  }  /* ________________ */
+
+  .menu-header-list {
+    display: none;
+  }
+
+    .header-container {
+    display: flex;
+    height: 100%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;/**/
+  }
+
+  .logo {
+    display: flex;
+    position: absolute;  
+    left: 40px;
+    top: 40px;
+    width: 200px;
+    margin: 0 auto 0 auto;
+    justify-content: center;
+  }
+
+  .header-title {
+    font-size: 1em;
+    width: 550px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /*______________________сейчас в треде*/
+  .trend-container {
+    width: 50%;
+    height: 300px;
+  }
+
+  /*_______________________________________________________________body*/
+  div.box {
+    display: flex;
+    margin-top: 57px;
+  }
+
+  .box-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;/**/
+    padding: 0 4.6%;
+  }
+
+  .main {
+    width: 55.7%;
+  }
+
+  .aside {
+    width: 38.6%; /22.5vw *270px;*/
+  }
+
+  /*_____________________*/
+  .news-img {
+    display: flex;
+    width: 100%;
+  }
+
+  .news {
+    flex-direction: column;
+  }
+
+  /*______________________________наши_изделия*/
+  .goods {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .goods-container {
+  width: calc(50% - 10px);
+  margin-top: 20px;
+  }
+  
+  .goods-container:nth-child(2n+1) {
+    margin-right: 20px;
+  }
+
+  /*____________________footer*/
+  .footer {
+    margin-top: 50px;
+  }
+
+  .footer_copirate {
+    margin-top: 50px;
+  }
+}
+
+/*==============================================================================desctop 1200 и более*/
+
+@media (min-width: 1200px) {
+  
+  .header {
+    background-image: url("../images/banner-bg.jpg");
+    padding: 25px 10vw 125px 10vw;
+
+  }
+
+  /*.header-container {
+    max-width: 1200px;    
+  }*/
+
+  .logo {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0px;
+    justify-content: flex-start;
+    width: 180px;
+  }
+
+  .menu-header {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0;
+    margin-top: 0;
+    justify-content: space-between;
+  }
+
+  .menu-header-list {
+    display: flex;
+    /*align-items: flex-start;
+    justify-content: flex-start;*/
+    justify-content: space-between;  
+    margin: 12px 0 0 0;
+    list-style: none;
+  }
+
+  .menu-header-list-item {
+    padding: 0 18px 0 17px;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+
+  a.menu_a {
+    color: #ffffff;
+    text-decoration: none;
+       /*Цвет ссылок*/
+  }
+  A.menu_a:visited {
+    color: #ffffff;
+    /* Цвет посещенных ссылок */
+  }
+  A.menu_a:active {
+    color: #ffffff;
+    /* Цвет активных ссылок */
+  }
+  A.menu_a:hover {
+    text-decoration: underline;
+    /* Подчёркиваем ссылу при наведении */
+  }
+  div.header-title {
+    display: block;
+    font-family: "Open Bold", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    text-transform: uppercase;
+    width: 750px;
+    margin: 103px auto 0 auto;
+  }
+
+  .hamb{
+    display: none;
+  }
+
+  /*____________________________сейчас в треде*/
+  .trend-container {
+    width: 25%;
+  }
+
+  /*_______________________________________________________________body*/
+  div.box {
+    display: flex;
+    position: relative;
+    margin-top: 57px;
+  }
+
+  .box-wrapper {
+    width: 100%;
+    /*max-width: 1200px;*/
+    margin: auto;
+    display: flex;
+    justify-content: space-between;/**/
+    padding: 0 10%;
+  }
+ 
+  .main {
+    width: 68.35%; /*66.67vw 800px;*/
+  }
+  .aside {
+    width: 25.35%; /*22.5vw 270px;*/
+  }
+
+  /*____________________________Наши изделия*/
+  .our-goods {
+    width: 80vw;/*Desktop_1200px;   border: 1px solid red;*/
+    margin-right: auto;
+    margin-left: auto;  
+  }
+
+  .goods {
+    display: flex;/*распологаем в ряд*/ /*width: 100%;*/
+    justify-content: space-between;
+  }
+
+  .goods-container {
+    width: 30%;  /*border: 1px solid green;*/
+  }
+
+/*Наши изделия*/
+  .goods-border-jpg {
+    margin: 45% 0 0 0;
+  }
+
+  .goods-border-title {
+    margin-top: 15%;
+  }
+ 
+  /*============================footer==*/
+    .footer {
+    margin-top: 75px;
+  }
+
+  .footer_copirate {
+    margin-top: 70px;
+  }
+}
+
+
+/*==============================================================================desctop 1920 и более*/
+
+@media (min-width: 1920px) {
+  
+  .header {
+    background-image: url("../images/banner-bg.jpg");
+    padding: 25px 10vw 125px 10vw;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto 0 auto;   
+  }
+
+/*Наши изделия*/
+  .goods-border-jpg {
+    margin: 50% 0 0 0;
+  }
+
+  .goods-border-title {
+    margin-top: 15%;
+  }
 }

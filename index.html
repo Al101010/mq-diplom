@@ -2,110 +2,161 @@
 <html class="page" lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Курсовая Адаптивная и Мобильная</title>
-  <!-- <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css" />
+	<title>mq-diploma</title>
 </head>
-<body>
-  <header class="header">
-    <nav class="menu">
-      <div><a class="logo" href="#0"><img src="svg/noemi-logo.svg" alt="Logo Noemi"></a></div>
-      <ul class="menu-list">
-        <li class="menu-list-item">
-      <a class="menu_a" href="#0">Главная</a>
+<!-- popup -->
+
+<div class="_hidden">
+  <div class="darkening"></div>
+  <div class="popup">
+    <form>
+      <h3 class="popup-title">ваш фидбек</h3>
+      <div class="form-group">
+        <label class="select-group">
+          <span class="select-label">Как часто вы заходите на сайт?</span>
+          <select class="select">
+            <option value="everyDay" selected>Каждый день</option>
+            <option value="almostEveryDay" selected>Почти каждый день</option>
+          </select>
+        </label>
+      </div>
+      <p class="popup-p">Вы подписаны на e-mail рассылку?</p>
+      <div class="radio-label">
+        <label>
+          <input class="radio" type="radio" name="mailing-list" checked>
+          <span class="mailing-list-text">Да</span>
+        </label>
+        <label>
+          <input class="radio" type="radio" name="mailing-list">
+          <span class="mailing-list-text">Нет</span>
+        </label>
+      </div>
+      <div class="text-field">
+        <label class="text-field_label">Расскажите, какой контент вы хотели-бы видеть на нашем сайте</label>
+        <textarea class="text-field_input" type="textarea" name="popup" placeholder="Может, больше рецептов?"></textarea>
+      </div>
+      <div class="to_send-row">
+        <button class="to_send-button"><span>Отправить</span></button>
+      </div>
+    </form>
+    <button class="popup__close" type="button">Закрыть окно</button>
+  </div>
+</div>
+
+
+
+<!-- header -->
+<header class="header">
+      <div class="hamb"><span class="hamb-line"></span></div>	
+  <div class="header-container">
+    <nav class="menu-header">
+      <div><a class="logo" href="#0"><img src="svg/noemi-logo.svg" alt="Logo Noemi"></a></div>   
+      <ul class="menu-header-list">
+        <li class="menu-header-list-item">
+          <a class="menu_a" href="#0">Главная</a>
         </li>
-        <li class="menu-list-item">
-      <a class="menu_a" href="#0">Посты</a>
+        <li class="menu-header-list-item">
+          <a class="menu_a" href="#0">Посты</a>
         </li>
-        <li class="menu-list-item">
-      <a class="menu_a" href="#0">Статьи</a>
+        <li class="menu-header-list-item">
+          <a class="menu_a" href="#0">Статьи</a>
         </li>
-        <li class="menu-list-item">
-      <a class="menu_a" href="#0">Теги</a>
+        <li class="menu-header-list-item">
+          <a class="menu_a" href="#0">Теги</a>
         </li>
-        <li class="menu-list-item">
-      <a class="menu_a" href="#0">Темы</a>
+        <li class="menu-header-list-item">
+          <a class="menu_a" href="#0">Темы</a>
         </li>
-        <li class="menu-list-item">
-      <a class="menu_a" href="#0">Контакты</a>
+        <li class="menu-header-list-item">
+          <a class="menu_a" href="#0">Контакты</a>
         </li>
       </ul>
     </nav>
-    <h1 class="header-title">Блог о творчестве, спорте, <br>и образе жизни</h1>
-  </header>
+    <div class="header-title"><h1>Блог о творчестве, спорте, и образе жизни</h1></div>
+  </div>
+</header>
 <!-- ----------------------------------------------сейчас в тренде--------- -->
-<h2 class="trends-title top">Сейчас в тренде</h2>
+<div class="container_trends">
+  <h2 class="trends-title top">Сейчас в тренде</h2>
 
-<section class="trends"> 
-  <article class="trend-container trend1 ">
-    <div class="trend-text-border">
-      <nav class="trend-menu">
-      <ul class="trend-menu-list">
-        <li class="trend-menu-list-item">
-          <a class="trend-menu-link" href="#0">lifestyle</a>
-        </li>
-        <li class="trend-menu-list-item">
-          <a class="trend-menu-link" href="#0">interior</a>
-        </li>
-      </ul>
-      </nav>
-      <h2 class="trend-title">Сейчас в тренде: сад<br> на подоконнике</h2>
-    </div>
-  </article>
-
-  <article class="trend-container trend2">
-    <div class="trend-text-border">
-      <nav class="trend-menu">
+  <section class="trends"> 
+    <article class="trend-container trend1 ">
+      <div class="trend-text-border">
+        <nav class="trend-menu">
         <ul class="trend-menu-list">
+          <li class="trend-menu-list-item">
+            <a class="trend-menu-link" href="#0">lifestyle</a>
+          </li>
+          <li class="trend-menu-list-item">
+            <a class="trend-menu-link" href="#0">interior</a>
+          </li>
+        </ul>
+        </nav>
+        <h2 class="trend-title">Сейчас в тренде: сад<br> на подоконнике</h2>
+      </div>
+    </article>
+
+    <article class="trend-container trend2">
+      <div class="trend-text-border">
+        <nav class="trend-menu">
+          <ul class="trend-menu-list">
+            <li class="trend-menu-list-item">
+              <a class="trend-menu-link" href="#0">food</a>
+            </li>
+          </ul>
+        </nav>
+        <h2 class="trend-title">Сыры на красивых картинках из интернета: какие они на вкус</h2>
+      </div>
+    </article>
+
+    <article class="trend-container trend3">
+      <div class="trend-text-border">
+	      <nav class="trernd-text">
+	        <ul class="trend-menu-list">
+	          <li class="trend-menu-list-item">
+	            <a class="trend-menu-link" href="#0">lifestyle</a>
+	          </li>
+	          <li class="trend-menu-list-item">
+	            <a class="trend-menu-link" href="#0">travel</a>
+	          </li>
+	        </ul>
+	      </nav>
+      	<h2 class="trend-title">Собираемся в первый поход в горы</h2>
+      </div>
+    </article>
+
+    <article class="trend-container trend4">
+      <div class="trend-text-border">
+    	  <nav class="trernd-text">
+        	<ul class="trend-menu-list">
           <li class="trend-menu-list-item">
             <a class="trend-menu-link" href="#0">food</a>
           </li>
-        </ul>
-      </nav>
-      <h2 class="trend-title">Сыры на красивых картинках из интернета: какие они на вкус</h2>
-    </div>
-  </article>
-
-  <article class="trend-container trend3">
-    <div class="trend-text-border">
-    <nav class="trernd-text">
-      <ul class="trend-menu-list">
-        <li class="trend-menu-list-item">
-          <a class="trend-menu-link" href="#0">lifestyle</a>
-        </li>
-        <li class="trend-menu-list-item">
-          <a class="trend-menu-link" href="#0">travel</a>
+          <li class="trend-menu-list-item">
+            <a class="trend-menu-link" href="#0">health</a>
           </li>
-        </ul>
-      </nav>
-      <h2 class="trend-title">Собираемся в первый поход в горы</h2>
-    </div>
-  </article>
+        	</ul>
+      	</nav>
+      	<h2 class="trend-title">Сейчас в тренде: сколько витамина с в лимонах?</h2>
+      </div>
+    </article>
 
-  <article class="trend-container trend4">
-    <div class="trend-text-border">
-    <nav class="trernd-text">
-      <ul class="trend-menu-list">
-        <li class="trend-menu-list-item">
-          <a class="trend-menu-link" href="#0">food</a>
-        </li>
-        <li class="trend-menu-list-item">
-          <a class="trend-menu-link" href="#0">health</a>
-        </li>
-      </ul>
-    </nav>
-    <h2 class="trend-title">Сейчас в тренде: сколько витамина с в лимонах?</h2>
-  </article>
-</section>
+  </section>
+</div>
 
-<!-- ----------------------------------------------body----------------------------------- -->
+<!--_____________________________________________________________________________main_________-->
+
   <div class="box">
    <div class="box-wrapper">
 
     <main class="main">
       
       <article class="news">
-        <a class="" href="#0"><img class="news-img" src="images/last-post1.jpg" alt="картинка человек идёт по пляжу"></a>
+        <div class="news-img">
+          <a class="" href="#0"><img class="news-img-a" src="images/last-post1.jpg" alt="картинка человек идёт по пляжу"></a>
+        </div>
         <div class="news-text">         
           <ul class="news-travel">
             <li class="news-li">
@@ -131,7 +182,9 @@
       </article>
 
       <article class="news">
-        <a class="" href="#0"><img class="news-img" src="images/last-post2.jpg" alt="йога на пляже"></a>
+        <div class="news-img">
+          <a class="" href="#0"><img class="news-img-a" src="images/last-post2.jpg" alt="йога на пляже"></a>
+        </div>
         <div class="news-text">
           <ul class="news-travel">
             <li class="news-li">
@@ -157,7 +210,9 @@
       </article>
  
       <article class="news">
-        <a class="" href="#0"><img class="news-img" src="images/last-post3.jpg" alt="девушка на фестивале"></a>
+        <div class="news-img">
+          <a class="" href="#0"><img class="news-img-a" src="images/last-post3.jpg" alt="девушка на фестивале"></a>
+        </div>
         <div class="news-text">
           <ul class="news-travel">
             <li class="news-li">
@@ -181,7 +236,9 @@
       </article>
 
       <article class="news">
-        <a class="" href="#0"><img class="news-img" src="images/last-post4.jpg" alt="тарелки с едой"></a>
+        <div class="news-img">
+          <a class="" href="#0"><img class="news-img-a" src="images/last-post4.jpg" alt="тарелки с едой"></a>
+        </div>
         <div class="news-text">
           <ul class="news-travel">
             <li class="news-li">
@@ -207,7 +264,9 @@
       </article>
 
       <article class="news">
-        <a class="" href="#0"><img class="news-img" src="images/last-post5.jpg" alt="подушка"></a>
+        <div class="news-img">
+          <a class="" href="#0"><img class="news-img-a" src="images/last-post5.jpg" alt="подушка"></a>
+        </div>
         <div class="news-text">
           <ul class="news-travel">
             <li class="news-li">
@@ -359,78 +418,77 @@
           </li>
         </ul>
       </section>
+
     </aside>
-
-
-
-
-
-
-
-
-
-
 
    </div>
   </div>
-<!-- ---  <img src="images/shop-item-desk1.jpg"">------------------------Наши изделия---------------------------- -->
-  <h2 class="goods-title top">Наши изделия</h2>
 
-  <div class="our-goods">
 
-    <section class="goods">
-      <article class="goods-container goods1">
-        <div class="goods-border-jpg"><br></div>
-        <div class="goods-border">
-          <h2 class="goods-border-title">Подушки на диван</h2>
-          <p>Набор из двух подушек с модными принтами. Видео о создании <a class="goods-link" href="#0">здесь</a>.</p>
-          <div class="goods-price">
-            <div>
-              <del class="goods-price-p">1000 <span class="rub">Р</span></del>
-              <p class="goods-price-p">800 <span class="rub">Р</span></p>
+<!-- ---------------------------Наши изделия---------------------------- -->
+ <div class="box_goods">
+      
+    <h2 class="goods-title top">Наши изделия</h2>
+
+    <div class="our-goods">
+      <section class="goods">
+
+        <article class="goods-container">
+          <div class="goods-1 goods-block">
+            <div class="goods-border-jpg"></div>
+            <div class="goods-border">
+              <h2 class="goods-border-title">Подушки на диван</h2>
+              <p>Набор из двух подушек с модными принтами. Видео о создании <a class="goods-link" href="#0">здесь</a>.</p>
+              <div class="goods-price">
+                <div>
+                  <del class="goods-price-p">1000 <span class="rub">Р</span></del>
+                  <p class="goods-price-p">800 <span class="rub">Р</span></p>
+                </div>
+                <button class="goods-button" alt="в магазин">в магазин</button>
+              </div>
             </div>
-            <button class="goods-button" alt="в магазин">в магазин</button>
           </div>
+        </article>
 
-        </div>
-      </article>
-
-      <article class="goods-container goods2">
-        <div class="goods-border-jpg"><br></div>
-        <div class="goods-border">
-          <h2 class="goods-border-title">Кукла зайчик</h2>
-          <p>интерьерная рукодельная кукла "зайчик", созданию которой посвящена <a class="goods-link" href="#0">весенняя серия постов</a> в блоге и несколько подкастов.</p>
-          <div class="goods-price">
-            <div>
-              <br>
-              <!--<del class="goods-price-p">1000 <span class="rub">Р</span></del>-->
-              <p class="goods-price-p">3500 <span class="rub">Р</span></p>
+        <article class="goods-container">
+          <div class="goods-2 goods-block">
+            <div class="goods-border-jpg"></div>
+            <div class="goods-border">
+              <h2 class="goods-border-title">Кукла зайчик</h2>
+              <p>интерьерная рукодельная кукла "зайчик", созданию которой посвящена <a class="goods-link" href="#0">весенняя серия постов</a> в блоге и несколько подкастов.</p>
+              <div class="goods-price">
+                <div>
+                  <br>
+                  <p class="goods-price-p">3500 <span class="rub">Р</span></p>
+                </div>
+                <button class="goods-button" alt="в магазин">в магазин</button>
+              </div>
             </div>
-            <button class="goods-button" alt="в магазин">в магазин</button>
           </div>
+        </article>
 
-        </div>
-      </article>
-
-      <article class="goods-container goods3">
-        <div class="goods-border-jpg"><br></div>
-        <div class="goods-border">
-          <h2 class="goods-border-title">Шестиугольная рамка</h2>
-          <p>необычная рамка для украшения дома из видео <a class="goods-link" href="#0">"Как сделать рамку из подручных средств за 30 минут"</a></p>
-          <div class="goods-price">
-            <div>
-              <del class="goods-price-p">500 <span class="rub">Р</span></del>
-              <p class="goods-price-p">400 <span class="rub">Р</span></p>
+        <article class="goods-container">
+          <div class="goods-3 goods-block">
+            <div class="goods-border-jpg"></div>
+            <div class="goods-border">
+              <h2 class="goods-border-title">Шестиугольная рамка</h2>
+              <p>необычная рамка для украшения дома из видео <a class="goods-link" href="#0">"Как сделать рамку из подручных средств за 30 минут"</a></p>
+              <div class="goods-price">
+                <div>
+                  <del class="goods-price-p">500 <span class="rub">Р</span></del>
+                  <p class="goods-price-p">400 <span class="rub">Р</span></p>
+                </div>
+                <button class="goods-button" alt="в магазин">в магазин</button>
+              </div>
             </div>
-            <button class="goods-button" alt="в магазин">в магазин</button>
           </div>
+        </article>
 
-        </div>        
-      </article>
+      </section>
+    </div>
+ </div><!--container_goods--> 
 
-    </section>
-  </div>
-
+ 
 <!-- ---------------------------footer---------------------------- -->
 <footer class="footer">
   <div class="container">
@@ -466,5 +524,5 @@
     <a href="#0" class="footer_copirate"><div class="footer_copirate">Copyright © 2009–2019 City Blog LLC.</div></a>
   </div>
 </footer>
-</body>
-</html>  
+
+</html>
