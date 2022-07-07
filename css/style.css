@@ -56,6 +56,7 @@
   text-align: center;
   text-transform: uppercase;
   margin: 0 auto;
+  font-size: 1rem;
 }
 
 .popup-title::after {
@@ -103,12 +104,22 @@
   border: 2px solid #b59f5b;
 }*/
 
+.select-label {
+  font-size: 13px;
+}
+
 .select:hover {
   border: 2px solid #b59f5b;
+  /*font-size: 12px;*/
+}
+
+.popup-p {
+  font-size: 13px;
 }
 
 .radio-label {
   margin-top: 8px;
+  font-size: 13px;
   /*width: 10px;*/
 }
 
@@ -143,6 +154,7 @@
 
 .text-field {
   margin-top: 25px;
+  font-size: 13px;
 }
 
 .text-field_label {}
@@ -397,6 +409,7 @@ z-index: 1;
 
 .trend-menu-list {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
 }
 
@@ -426,6 +439,11 @@ h1 {
   text-transform: uppercase;
   margin-top: 5px;
 }
+
+.trend-title-br {
+  margin-top: 0;
+}
+
 
 /*________________________________________________________ main*/
 
@@ -649,6 +667,7 @@ h3.top {
   font-size: 13px;
   border: none;
   background-color:#f4f7f6;
+  outline: none; /*удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
 }
 
 .search-field:focus /*focus hover*/ {
@@ -718,6 +737,7 @@ h3.top {
   border: none;
   background-color:#f4f7f6;
   margin-top: 22px;
+  outline: none; /*удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
 }
 
 .mailing-field:focus /*focus hover*/ {
@@ -814,10 +834,10 @@ li.list-theme-item {
 }
 
 .our-goods {
-  width: 80vw;/*Desktop_1200px;   border: 1px solid red;*/
+  
+}/*  width: 80vw;/*Desktop_1200px;   border: 1px solid red;*/
   margin-right: auto;
-  margin-left: auto;  
-}/**/
+  margin-left: auto;*/
 
 .goods {
   display: flex;/*распологаем в ряд*/ /*width: 100%;*/
@@ -1024,15 +1044,26 @@ li.list-theme-item {
   /*_______________________________________________________________body*/
   .main {
     width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .aside {
     width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  /*_____________________*/
+
   .news-img {
     display: flex;
     width: 100%;
+  }
+  .news-img-a {
+    width: 100%;
+  }
+
+  .news-text {
+    margin-left: 0;
   }
 
   .news {
@@ -1040,9 +1071,15 @@ li.list-theme-item {
   }
 
   /*______________________________наши_изделия*/
+  .box_goods {
+    padding: 0 4.6%;
+  }
+
+
   .goods {
     flex-direction: column;
   }
+
   .goods-container {
   width: 100%;
   margin-top: 20px;
@@ -1058,7 +1095,7 @@ li.list-theme-item {
   }
 }
 
-/*==============================================================================tablet от 641 до 1200*/
+/*==============================================================================tablet от 641 px до 1199 px*/
 
 @media (min-width: 641px) and (max-width: 1199px) {
   
@@ -1119,15 +1156,17 @@ li.list-theme-item {
     width: 100%;
     display: flex;
     justify-content: space-between;/**/
-    padding: 0 4.6%;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .main {
-    width: 55.7%;
+    width: calc(50%-90px); /*55.7%;*/
+    margin-right: 30px;
   }
 
   .aside {
-    width: 38.6%; /22.5vw *270px;*/
+    width: calc(50%-30px); /*38.6%; 22.5vw 270px;*/
   }
 
   /*_____________________*/
@@ -1136,11 +1175,22 @@ li.list-theme-item {
     width: 100%;
   }
 
+/*    min-width: 350px;
+    min-height: 90px;*/
+
   .news {
     flex-direction: column;
   }
 
   /*______________________________наши_изделия*/
+  .box_goods {
+  margin-left: 30px;
+  margin-right: 30px;
+  min-width: ;
+  }
+
+
+
   .goods {
     display: flex;
     flex-direction: row;
@@ -1172,13 +1222,14 @@ li.list-theme-item {
   
   .header {
     background-image: url("../images/banner-bg.jpg");
-    padding: 25px 10vw 125px 10vw;
 
+    padding-top: 25px;
+    padding-bottom: 125px;
   }
 
-  /*.header-container {
+  .header-container {
     max-width: 1200px;    
-  }*/
+  }
 
   .logo {
     display: flex;
@@ -1256,12 +1307,13 @@ li.list-theme-item {
   }
 
   .box-wrapper {
-    width: 100%;
+    width: 80vw;/*100%;*/
     max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;/**/
-    padding: 0 0;
+    padding-left: 0px;
+    padding-right: 0px;
   }
  
   .main {
@@ -1273,7 +1325,9 @@ li.list-theme-item {
 
   /*____________________________Наши изделия*/
   .our-goods {
+    display: flex;
     width: 80vw;/*Desktop_1200px;   border: 1px solid red;*/
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;  
   }
